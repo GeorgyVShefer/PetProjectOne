@@ -1,0 +1,17 @@
+version: '3.8'  # Версия схемы docker-compose
+
+services:
+  postgres:  # Настройки сервиса PostgreSQL
+    image: postgres:13  # Используемый Docker образ PostgreSQL версии 13
+    container_name: postgres_db  # Имя контейнера для PostgreSQL (postgres_emp)
+    environment:  # Переменные окружения для PostgreSQL
+      POSTGRES_DB: set_db  # Имя базы данных (employee_db)
+      POSTGRES_USER: root  # Имя пользователя базы данных (root)
+      POSTGRES_PASSWORD: root # Пароль пользователя базы данных (root)
+    ports:
+      - "5432:5432"  # Проброс портов: порт на хосте -> порт в контейнере
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Монтируем том для данных PostgreSQL
+
+volumes:
+  postgres_data:  # Определение тома Docker для данных PostgreSQL
