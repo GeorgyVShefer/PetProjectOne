@@ -2,6 +2,7 @@ package org.example.dto;
 
 import lombok.*;
 import org.example.model.Course;
+import org.example.model.Student;
 import org.example.model.University;
 
 import java.util.HashSet;
@@ -13,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @ToString
-public class StudentDTO {
+public class StudentDTO extends Student {
     private int id;
     private String name;
     private University university;
