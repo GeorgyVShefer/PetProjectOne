@@ -23,7 +23,8 @@ public class CourseService {
     //Должен возвращать список CourseDTO
     //Смапить модель курс в courseDTO
     public List<Course> get(){
-        return courseDAO.getAll();
+
+        return  courseDAO.getAll();
     }
     public CourseDTO getCourseById(int id){
         Course courseById = courseDAO.getCourseById(id);
