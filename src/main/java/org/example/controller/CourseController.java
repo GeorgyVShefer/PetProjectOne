@@ -104,10 +104,10 @@ public class CourseController extends HttpServlet {
             return;
         }
 
-        // Вызов сервиса для удаления пользователя
+
         CourseService courseService = new CourseService();
         courseService.delete(Integer.parseInt(courseId));
-        // Проверяем, был ли пользователь успешно удалён
+
         if (courseService == null) {
             resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
         } else {
